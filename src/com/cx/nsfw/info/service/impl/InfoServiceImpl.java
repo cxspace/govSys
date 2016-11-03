@@ -1,5 +1,6 @@
 package com.cx.nsfw.info.service.impl;
 
+import com.cx.core.service.impl.BaseServiceImpl;
 import com.cx.nsfw.info.dao.InfoDao;
 import com.cx.nsfw.info.entity.Info;
 import com.cx.nsfw.info.service.InfoService;
@@ -14,34 +15,13 @@ import java.util.List;
  */
 
 @Service("infoService")
-public class InfoServiceImpl implements InfoService {
+public class InfoServiceImpl extends BaseServiceImpl<Info> implements InfoService{
 
-    @Resource
     private InfoDao infoDao;
+    @Resource
 
-
-    @Override
-    public void delete(Serializable id) {
-        infoDao.delete(id);
-    }
-
-    @Override
-    public void save(Info info) {
-        infoDao.save(info);
-    }
-
-    @Override
-    public void update(Info info) {
-        infoDao.update(info);
-    }
-
-    @Override
-    public Info findObjectById(Serializable id) {
-        return infoDao.findObjectById(id);
-    }
-
-    @Override
-    public List<Info> findObjects() {
-        return infoDao.findObjects();
+    public void setInfoDao(InfoDao infoDao) {
+        super.setBaseDao(infoDao);
+        this.infoDao = infoDao;
     }
 }

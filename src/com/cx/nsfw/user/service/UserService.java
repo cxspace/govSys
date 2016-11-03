@@ -1,6 +1,7 @@
 package com.cx.nsfw.user.service;
 
 import com.cx.core.exception.ServiceException;
+import com.cx.core.service.BaseService;
 import com.cx.nsfw.user.entity.User;
 import com.cx.nsfw.user.entity.UserRole;
 
@@ -12,17 +13,8 @@ import java.util.List;
 /**
  * Created by cxspace on 16-8-23.
  */
-public interface UserService {
+public interface UserService extends BaseService<User> {
 
-    public void save(User user);
-
-    public void update(User user);
-
-    public void delete(Serializable id);
-
-    public User findObjectById(Serializable id);
-
-    public List<User> findObiects() throws ServiceException;
 
     //导出用户列表
     public void importExcel(File userExcel, String fileType);

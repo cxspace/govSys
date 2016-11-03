@@ -17,6 +17,7 @@ import java.util.List;
  * Created by cxspace on 16-10-27.
  */
 public class InfoAction extends BaseAction{
+
     @Resource
     private InfoService infoService;
 
@@ -28,6 +29,8 @@ public class InfoAction extends BaseAction{
     public String listUI() throws Exception{
 
         ActionContext.getContext().getContextMap().put("infoTypeMap",Info.INFO_TYPE_MAP);
+
+
 
         try {
             infoList = infoService.findObjects();

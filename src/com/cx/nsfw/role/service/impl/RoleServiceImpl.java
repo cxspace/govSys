@@ -1,6 +1,7 @@
 package com.cx.nsfw.role.service.impl;
 
 import com.cx.core.exception.ServiceException;
+import com.cx.core.service.impl.BaseServiceImpl;
 import com.cx.nsfw.role.dao.RoleDao;
 import com.cx.nsfw.role.entity.Role;
 import com.cx.nsfw.role.service.RoleService;
@@ -16,14 +17,15 @@ import java.util.List;
 
 
 @Service("roleService")
-public class RoleServiceImpl implements RoleService{
+public class RoleServiceImpl extends BaseServiceImpl<Role> implements RoleService{
 
-    @Resource
+
     private RoleDao roleDao;
 
-    @Override
-    public void save(Role role) {
-        roleDao.save(role);
+    @Resource
+    public void setRoleDao(RoleDao roleDao) {
+        super.setBaseDao(roleDao);
+        this.roleDao = roleDao;
     }
 
     @Override
@@ -35,18 +37,4 @@ public class RoleServiceImpl implements RoleService{
         roleDao.update(role);
     }
 
-    @Override
-    public void delete(Serializable id) {
-        roleDao.delete(id);
-    }
-
-    @Override
-    public Role findObjectById(Serializable id) {
-        return roleDao.findObjectById(id);
-    }
-
-    @Override
-    public List<Role> findObiects() throws ServiceException {
-        return roleDao.findObjects();
-    }
 }

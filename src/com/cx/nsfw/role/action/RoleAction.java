@@ -30,7 +30,7 @@ public class RoleAction extends BaseAction{
         //加载权限集合,存入栈顶,只要前加#便可拿出
         ActionContext.getContext().getContextMap().put("privilegeMap", Constant.PRIVILEGE_MAP);
         try {
-            roleList = roleService.findObiects();
+            roleList = roleService.findObjects();
         } catch (Exception e) {
             throw new Exception(e.getMessage());
         }

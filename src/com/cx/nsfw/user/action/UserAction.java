@@ -166,7 +166,7 @@ public class UserAction extends BaseAction{
     public void exportExcel() throws SysException{
         //实现导出
         //1.查找用户列表
-        userList = userService.findObiects();
+        userList = userService.findObjects();
         //2.导出
 
         try {
@@ -215,8 +215,8 @@ public class UserAction extends BaseAction{
     public String listUI() throws SysException{
 
         try {
-            userList = userService.findObiects();
-        }catch (ServiceException e){
+            userList = userService.findObjects();
+        }catch (Exception e){
             throw new ActionException("action 出现异常："+e.getMessage());
         }
             return "listUI";
@@ -225,7 +225,7 @@ public class UserAction extends BaseAction{
     public String addUI() throws ServiceException {
 
         //查出角色列表
-        ActionContext.getContext().getContextMap().put("roleList",roleService.findObiects());
+        ActionContext.getContext().getContextMap().put("roleList",roleService.findObjects());
 
         return "addUI";
 
@@ -245,7 +245,7 @@ public class UserAction extends BaseAction{
     //跳转到编辑页面
     public String editUI() throws ServiceException {
 
-        ActionContext.getContext().getContextMap().put("roleList",roleService.findObiects());
+        ActionContext.getContext().getContextMap().put("roleList",roleService.findObjects());
 
         //找出原来的信息
         if (user != null && user.getId() != null) {

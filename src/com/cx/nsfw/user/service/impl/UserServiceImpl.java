@@ -1,6 +1,8 @@
 package com.cx.nsfw.user.service.impl;
 
 import com.cx.core.exception.ServiceException;
+import com.cx.core.service.BaseService;
+import com.cx.core.service.impl.BaseServiceImpl;
 import com.cx.core.util.ExcelUtil;
 import com.cx.nsfw.role.entity.Role;
 import com.cx.nsfw.user.dao.UserDao;
@@ -32,27 +34,16 @@ import java.util.List;
  */
 
 @Service("userService")
-public class UserServiceImpl implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<User> implements UserService {
 
-    @Resource
     private UserDao userDao;
 
-    @Override
-    public void delete(Serializable id) {
-        userDao.delete(id);
+    @Resource
+    public void setUserDao(UserDao userDao) {
+        super.setBaseDao(userDao);
+        this.userDao = userDao;
     }
 
-    @Override
-    public List<User> findObiects() throws ServiceException{
-
-        try{
-          //  int i = 1 / 0 ;
-        }catch (Exception e)
-        {
-            throw new ServiceException("service 出错! "+e.getMessage());
-        }
-        return userDao.findObjects();
-    }
 
     @Override
     public List<User> findUserByAccountAndPassword(String account, String password) {
@@ -151,20 +142,6 @@ public class UserServiceImpl implements UserService {
         return userDao.findUserByAccountAndId(id , account);
     }
 
-    @Override
-    public User findObjectById(Serializable id) {
-        return userDao.findObjectById(id);
-    }
-
-    @Override
-    public void save(User user) {
-        userDao.save(user);
-    }
-
-    @Override
-    public void update(User user) {
-        userDao.update(user);
-    }
 
     @Override
     public void saveUserAndRole(User user, String... roleIds) {
