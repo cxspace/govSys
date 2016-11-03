@@ -5,15 +5,37 @@
 
 - 创建governmentSys数据库
 
+    表由hibernate映射生成
+
+    目前有
+
+    user  (用户表)
+
+
+    user_role   (维护用户与用户角色关系的中间表)
+
+
+    role   (角色表)
+
+    role_privilege  (角色权限表)
+
+    info  (发布消息模块的表)
+
+
 ### 2.SSH整合 ###
 
 - 导入ssh相关jar包
 
+      hibernate3 + spring4.3.1 + struts2.3.16.1
+
 - 测试spring
+
 
 - 测试struts-spring整合
 
+
 - 测试spring-hibernate整合
+
 
 - 配置连接池,事务管理并测试
 
