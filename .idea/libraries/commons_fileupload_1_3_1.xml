@@ -1,0 +1,17 @@
+<component name="libraryTable">
+  <library name="commons-fileupload-1.3.1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/Struts2/commons-fileupload-1.3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Struts2/commons-io-2.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Struts2/commons-lang3-3.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Struts2/commons-logging-1.1.3.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Struts2/freemarker-2.3.19.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Struts2/javassist-3.11.0.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Struts2/ognl-3.0.6.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Struts2/struts2-core-2.3.16.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/Struts2/xwork-core-2.3.16.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

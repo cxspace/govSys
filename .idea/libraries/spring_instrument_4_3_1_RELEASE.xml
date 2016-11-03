@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="spring-instrument-4.3.1.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring/other/spring-instrument-4.3.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/other/spring-instrument-tomcat-4.3.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/other/spring-jms-4.3.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/other/spring-messaging-4.3.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/other/spring-oxm-4.3.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/other/spring-test-4.3.1.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

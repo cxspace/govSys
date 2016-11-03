@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="spring-web-3.2.5.RELEASE">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring/web/spring-web-3.2.5.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/web/struts2-spring-plugin-2.3.4.1.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,15 @@
+<component name="libraryTable">
+  <library name="aopalliance-1.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/spring/aop/aopalliance-1.0.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/aop/aspectjrt.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/aop/aspectjtools.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/aop/aspectjweaver.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/aop/org.aspectj.matcher.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/aop/spring-aop-4.3.1.RELEASE.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/spring/aop/spring-aspects-4.3.1.RELEASE.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
