@@ -99,9 +99,11 @@
                                 	<span  id="oper_<s:property value='infoId'/>">
                                 	<s:if test="state==1">
                                 		<a href="javascript:doPublic('<s:property value='infoId'/>',0)">停用</a>
-                                	</s:if><s:else>
+                                	</s:if>
+
+										<s:else>
                                 		<a href="javascript:doPublic('<s:property value='infoId'/>',1)">发布</a>
-                                	</s:else>
+                                    	</s:else>
                                 	</span>
                                     <a href="javascript:doEdit('<s:property value='infoId'/>')">编辑</a>
                                     <a href="javascript:doDelete('<s:property value='infoId'/>')">删除</a>
