@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <td class="tdBg" width="200px">信息内容：</td>
-            <td colspan="3"><s:textarea id="editor" name="info.content" cssStyle="width:90%;height:160px;" /></td>
+            <td colspan="3"><s:textarea id="editor" name="info.content" cssStyle="width:90%;height:460px;" /></td>
         </tr>
         <tr>
             <td class="tdBg" width="200px">备注：</td>

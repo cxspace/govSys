@@ -4,8 +4,11 @@ import com.cx.core.action.BaseAction;
 import com.cx.nsfw.info.entity.Info;
 import com.cx.nsfw.info.service.InfoService;
 import com.opensymphony.xwork2.ActionContext;
+import org.apache.struts2.ServletActionContext;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletOutputStream;
+import javax.servlet.http.HttpServletResponse;
 import java.sql.Timestamp;
 import java.util.Date;
 import java.util.List;
@@ -111,6 +114,38 @@ public class InfoAction extends BaseAction{
         return "list";
     }
 
+    public void publicInfo(){
+
+        try {
+
+            if (info != null){
+
+                //拿到要更改状态的记录
+                Info tem = infoService.findObjectById(info.getInfoId());
+
+                tem.setState(info.getState());
+
+                infoService.update(tem);
+
+                //输出更新结果到前台
+                HttpServletResponse response = ServletActionContext.getResponse();
+
+                response.setContentType("text/html");
+
+                ServletOutputStream outputStream = response.getOutputStream();
+
+                outputStream.write("更新状态成功".getBytes("utf-8"));
+
+                outputStream.close();
+
+            }
+
+
+        }catch (Exception e){
+
+        }
+
+    }
 
     public Info getInfo() {
         return info;

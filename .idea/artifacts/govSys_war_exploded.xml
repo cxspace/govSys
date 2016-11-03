@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
   <artifact type="exploded-war" name="govSys:war exploded">
-    <output-path>$PROJECT_DIR$/out/artifacts/govSys_war_exploded</output-path>
+    <output-path>$USER_HOME$/apache-tomcat-8.0.35/webapps/governmentSys</output-path>
     <root id="root">
       <element id="javaee-facet-resources" facet="govSys/web/Web" />
       <element id="directory" name="WEB-INF">
