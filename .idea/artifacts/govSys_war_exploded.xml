@@ -21,6 +21,7 @@
           <element id="library" level="project" name="antlr-2.7.6" />
           <element id="library" level="project" name="spring-web-3.2.5.RELEASE" />
           <element id="library" level="project" name="activation" />
+          <element id="library" level="project" name="commons-codec-1.9" />
         </element>
       </element>
     </root>
