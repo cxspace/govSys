@@ -4,6 +4,15 @@
     <%@include file="/common/header.jsp"%>
     <title>信息发布管理</title>
     <script type="text/javascript">
+
+	//搜索
+	function doSearch() {
+
+		document.forms[0].action = "${basePath}nsfw/info_listUI.action";
+		document.forms[0].submit();
+
+	}
+
   	//全选、全反选
 	function doSelectAll(){
 		// jquery 1.6 前
@@ -15,7 +24,8 @@
   	function doAdd(){
   		document.forms[0].action = "${basePath}nsfw/info_addUI.action";
   		document.forms[0].submit();
-  	}
+
+	}
   	//编辑
   	function doEdit(id){
   		document.forms[0].action = "${basePath}nsfw/info_editUI.action?info.infoId=" + id;

@@ -2,6 +2,7 @@ package com.cx.core.service.impl;
 
 import com.cx.core.dao.BaseDao;
 import com.cx.core.service.BaseService;
+import com.cx.core.util.QueryHelper;
 
 import java.io.Serializable;
 import java.util.List;
@@ -42,5 +43,15 @@ public class BaseServiceImpl<T> implements BaseService<T> {
     @Override
     public List<T> findObjects() {
         return baseDao.findObjects();
+    }
+
+    @Override
+    public List<T> findObjects(String hql, List<Object> parameters) {
+        return baseDao.findObjects(hql,parameters);
+    }
+
+    @Override
+    public List<T> findObjects(QueryHelper queryHelper) {
+        return  baseDao.findObjects(queryHelper);
     }
 }

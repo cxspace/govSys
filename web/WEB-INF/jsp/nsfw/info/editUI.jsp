@@ -52,6 +52,10 @@
             </td>
         </tr>
     </table>
+
+                <%--暂存查询条件值--%>
+
+                <s:hidden name="strTitle"></s:hidden>
     <s:hidden name="info.infoId"/>
     <s:hidden name="info.state"/>
     <div class="tc mt20">

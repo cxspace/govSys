@@ -1,5 +1,7 @@
 package com.cx.core.dao;
 
+import com.cx.core.util.QueryHelper;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -22,5 +24,13 @@ public interface BaseDao <T> {
 
     //查找列表
     public List<T> findObjects();
+
+
+    //条件查询实体列表
+
+    public List<T> findObjects(String hql , List<Object> parameters);
+
+    //条件查询实体列表
+    public List<T> findObjects(QueryHelper queryHelper);
 
 }

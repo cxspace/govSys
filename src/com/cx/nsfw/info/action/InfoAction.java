@@ -1,15 +1,19 @@
 package com.cx.nsfw.info.action;
 
 import com.cx.core.action.BaseAction;
+import com.cx.core.util.QueryHelper;
 import com.cx.nsfw.info.entity.Info;
 import com.cx.nsfw.info.service.InfoService;
 import com.opensymphony.xwork2.ActionContext;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.struts2.ServletActionContext;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletOutputStream;
 import javax.servlet.http.HttpServletResponse;
+import java.net.URLDecoder;
 import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -25,22 +29,43 @@ public class InfoAction extends BaseAction{
 
     private Info info;
 
+    private String strTitle;
+
     //列表页面
     public String listUI() throws Exception{
 
         ActionContext.getContext().getContextMap().put("infoTypeMap",Info.INFO_TYPE_MAP);
 
-
+        QueryHelper queryHelper = new QueryHelper(Info.class,"i");
 
         try {
-            infoList = infoService.findObjects();
+
+            if (info != null){
+
+                if (StringUtils.isNotBlank(info.getTitle())){
+
+                    info.setTitle(URLDecoder.decode(info.getTitle(),"utf-8"));
+
+                    queryHelper.addCondition("i.title like ?", "%" + info.getTitle() +"%");
+                }
+
+                queryHelper.addCondition("i.state = ?","1");
+
+            }
+
+            queryHelper.addOrderByProperty("i.createTime",QueryHelper.ORDER_BY_DESC);
+
+            infoList = infoService.findObjects(queryHelper);
+
+
         }catch (Exception e){
-            throw new Exception(e.getMessage());
+            throw new RuntimeException(e);
         }
 
         return "listUI";
 
     }
+
     //跳转到新增页面
 
     public String addUI()
@@ -61,6 +86,9 @@ public class InfoAction extends BaseAction{
             if (info != null){
                 infoService.save(info);
             }
+
+            info = null;
+
         }catch (Exception e){
             e.printStackTrace();
         }
@@ -75,7 +103,11 @@ public class InfoAction extends BaseAction{
         ActionContext.getContext().getContextMap().put("infoTypeMap",Info.INFO_TYPE_MAP);
 
         if (info != null && info.getInfoId() != null){
+
+            strTitle = info.getTitle();
+
             info = infoService.findObjectById(info.getInfoId());
+
         }
 
         return "editUI";
@@ -99,8 +131,12 @@ public class InfoAction extends BaseAction{
     public String delete(){
 
         if (info != null && info.getInfoId() != null){
+
+            strTitle = info.getTitle();
+
             infoService.delete(info.getInfoId());
         }
+
 
         return "list";
     }
@@ -172,5 +208,14 @@ public class InfoAction extends BaseAction{
 
     public void setInfoService(InfoService infoService) {
         this.infoService = infoService;
+    }
+
+
+    public String getStrTitle() {
+        return strTitle;
+    }
+
+    public void setStrTitle(String strTitle) {
+        this.strTitle = strTitle;
     }
 }

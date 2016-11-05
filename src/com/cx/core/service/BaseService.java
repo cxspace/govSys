@@ -1,5 +1,7 @@
 package com.cx.core.service;
 
+import com.cx.core.util.QueryHelper;
+
 import java.io.Serializable;
 import java.util.List;
 
@@ -17,5 +19,11 @@ public interface BaseService <T>{
     public T findObjectById(Serializable id);
 
     public List<T> findObjects();
+
+    //条件查询实体列表
+
+    public List<T> findObjects(String hql , List<Object> parameters);
+
+    public List<T> findObjects(QueryHelper queryHelper);
 
 }
